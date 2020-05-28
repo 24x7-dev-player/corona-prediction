@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title> Corona detector </title>
+    <link rel="stylesheet" type="text/css" href="\static\css\style.css">   
+</head>
+    <body>
+    <div class="login-box">
+    <img src="\static\images\crlogo.png" class="avatar">
+        <h1>Code with tushar present Cororna detector</h1>
+            <form action="{{url_for('predict')}}" method = "post">
+            <p>Enter Your Fever</p>
+            <input type="number" name="fever" placeholder="Enter Your Fever">
+            Body pain : <select name="BodyPain" size = "1">
+                <option value="0">No pain</option>
+                <option value="1">high pain</option>
+            </select>
+            <br>
+            <br>
+            <p>Enter Your Age</p>
+            <input type="number" name="age" placeholder="Enter Your Age">
+            Runny Nose: <Select name = "runnynose" size = "1">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </Select>
+            <br>
+            Difficulty to Breath: <Select name = "difftobreath" size ="1">
+                <option value="1">Low</option>
+                <option value="-1">Medium</option>
+                <option value="0">high</option>
+            </Select>
+            <br>
+            <br>
+            <input type="submit" value="Predict Your Infection Probability"> 
+            </form>
+            <br>
+         <h1>{{ Prediction_text }}</h1>
+        </div>
+    
+    </body>
+</html>
